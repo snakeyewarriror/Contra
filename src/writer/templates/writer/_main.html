@@ -1,0 +1,38 @@
+{% extends 'common/_main.html' %}
+{% load i18n %}
+
+{% block tab_title %} Writers - The contrarian report {% endblock %}
+
+{% block navbar_item_margin %} ms-auto {%endblock %}
+
+{% block navbar_option_1 %}
+    {% with option_url='writer-dashboard' %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}
+
+{% block navbar_option_2 %}
+    {% with option_url='create-article' option_label='Create article' %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}
+
+
+{% block navbar_option_3 %}
+    {% with option_url='my-articles' option_label='My articles' %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}
+
+{% block navbar_option_4 %}
+    {% with option_url='update-writer' %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}
+
+
+{% block navbar_option_6 %}
+    {% with option_url='update-writer' %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}

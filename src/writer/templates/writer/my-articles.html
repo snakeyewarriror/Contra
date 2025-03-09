@@ -1,0 +1,59 @@
+{%extends 'writer/_main.html' %}
+{% load i18n %}
+
+{% block content %}
+
+    {% if not my_articles %}
+
+        <div class='container bg-white shadow mt-5 p-5 form-layout text-center'>
+            <h5> {% translate 'You still haven´t ceated an article'%} </h5>
+            <hr>
+            <p>
+                <strong>
+                    {% translate 'Here you will see all the reports and articles you´ve written.'%} 
+                </strong>
+
+            </p>
+
+            <p>
+                <em> {% translate 'What´s your perspective on the markets right now?'%} </em>
+            </p>
+        </div>
+
+    {% endif %}
+
+    {% for article in my_articles %}
+        <div class='container bg-white shadow mt-5 p-5 form-layout text-center'>
+            <h3> {{ article.title }} </h3>
+
+            <p>
+                {{ article.content }}
+            </p>
+
+
+            <p>
+                <strong>
+                    {% if article.is_premium %}
+                        ⭐ {% translate 'Premium Article' %}
+
+                    {% else %}
+                        {% translate 'Standard Article' %}
+
+                    {% endif %}
+                </strong>
+            </p>
+
+            <hr>
+
+            <div class= "d-flex justify-content-between align-items-center">
+                <em> {{article.date_poster}} </em>
+                <a href ="{% url 'update-article' article.id %}" class="btn btn-link btn-light">
+                    {% translate 'Update' %}
+                </a>
+                <a href ="{% url 'delete-article' article.id %}" class="btn btn-link btn-light">
+                    {% translate 'Delete' %}
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

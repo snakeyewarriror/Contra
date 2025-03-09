@@ -1,0 +1,11 @@
+{% extends "client/_main.html" %}
+{% load i18n %}
+
+
+{% block content %}
+
+    <div class="container bg-white shadow my-5 p-5 form-layout text-center">
+        <h3> 📖 {% translate 'Welcome back, '%} {{user.first_name}} </h3>
+    </div>
+
+{% endblock %}

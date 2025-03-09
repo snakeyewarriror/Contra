@@ -1,0 +1,21 @@
+{%extends 'client/_main.html' %}
+{% load i18n %}
+
+{% block content %}
+    <div class='container bg-white shadow mt-5 p-5 form-layout text-center'> 
+        <h3>{% translate "Subscription cancelled" %}</h3>
+        <hr>
+        <p> 
+            {% blocktranslate %}
+                Your subscription has been successfully cancelled. 
+                We are sorry to see you go.
+            {% endblocktranslate %}
+        </p>
+        
+        
+        <a href ="{% url 'client-dashboard' %}" class="btn btn-success">
+            {% translate 'Return' %}
+        </a>
+    </div>
+{% endblock %}
+
