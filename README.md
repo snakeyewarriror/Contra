@@ -7,64 +7,7 @@
 Contra is a Django app with a MySQL backend DB.
 
 ### Project Structure
-
-📦 project-root/
-├── 📄 .gitignore               # Ignore files for Git
-├── 📄 LICENSE                  # Project license(consider using .env instead)
-├── 📄 README.md                # Project documentation
-├── 📄 requirements.txt         # Python dependencies
-├── 📁 .vscode/                 # VS Code settings
-│   ├── 📄 Contra.code-workspace   # Workspace settings
-│   ├── ...
-├── 📁 docs/                    # Documentation folder
-│   ├── ...
-├── 📄 db.sqlite3               # SQLite database (local development)
-├── 🐍 manage.py                # Django management script
-├── 📁 src/                     # (Optional) Source code folder
-│   ├── 📁 account/             # User authentication & account management
-│   │   ├── 🐍 __init__.py
-│   │   ├── 🐍 admin.py
-│   │   ├── 🐍 apps.py
-│   │   ├── 🐍 forms.py
-│   │   ├── 🐍 managers.py
-│   │   ├── 🐍 models.py
-│   │   ├── 🐍 tests.py
-│   │   ├── 🐍 urls.py
-│   │   ├── 🐍 views.py
-│   │   ├── 📁 migrations/      # Django database migrations
-│   │   ├── 📁 templates/       # Account-related templates
-│   │   ├── 📁 __pycache__/     # Python cache
-│   │   ├── ...
-│   ├── 📁 client/              # Client-related functionality
-│   │   ├── 🐍 __init__.py
-│   │   ├── 🐍 admin.py
-│   │   ├── 🐍 apps.py
-│   │   ├── 🐍 forms.py
-│   │   ├── 🐍 models.py
-│   │   ├── 🐍 paypal.py        # PayPal-related logic
-│   │   ├── 🐍 tests.py
-│   │   ├── 🐍 urls.py
-│   │   ├── 🐍 views.py
-│   │   ├── 📁 migrations/
-│   │   ├── 📁 templates/       # Client-related templates
-│   │   ├── 📁 __pycache__/
-│   │   ├── ...
-│   ├── 📁 common/              # Shared resources (e.g., base templates, utilities)
-│   │   ├── ...
-│   ├── 📁 contra/              # Django project settings
-│   │   ├── 🐍 __init__.py
-│   │   ├── 🐍 settings.py      # Main Django settings
-│   │   ├── 🐍 urls.py          # Project-level URLs
-│   │   ├── 🐍 wsgi.py          # WSGI configuration
-│   │   ├── 🐍 asgi.py          # ASGI configuration (if needed)
-│   │   ├── ...
-│   ├── 📁 static/              # Static assets (CSS, JS, images)
-│   │   ├── css/
-│   │   ├── js/
-│   │   ├── images/
-│   │   ├── ...
-│   ├── 📁 writer/              # Writer-related functionality
-│   │   ├── ...
+📦 project-root/ ├── 📄 .gitignore # Arquivos ignorados pelo Git ├── 📄 LICENSE # Licença do projeto ├── 📄 README.md # Documentação do projeto ├── 📄 requirements.txt # Dependências do Python ├── 📁 .vscode/ # Configurações do VS Code │ ├── 📄 Contra.code-workspace # Configurações do workspace │ ├── ... ├── 📁 docs/ # Pasta de documentação │ ├── ... ├── 📄 db.sqlite3 # Banco de dados SQLite (desenvolvimento) ├── 🐍 manage.py # Script de gerenciamento do Django ├── 📁 src/ # Código-fonte principal │ ├── 📁 account/ # Gerenciamento de contas e autenticação │ │ ├── 🐍 init.py │ │ ├── 🐍 admin.py │ │ ├── 🐍 apps.py │ │ ├── 🐍 forms.py │ │ ├── 🐍 managers.py │ │ ├── 🐍 models.py │ │ ├── 🐍 tests.py │ │ ├── 🐍 urls.py │ │ ├── 🐍 views.py │ │ ├── 📁 migrations/ # Migrações do Django │ │ ├── 📁 templates/ # Templates HTML para "account" │ │ ├── 📁 pycache/ # Cache do Python │ │ ├── ... │ ├── 📁 client/ # Funcionalidade relacionada ao cliente │ │ ├── 🐍 init.py │ │ ├── 🐍 admin.py │ │ ├── 🐍 apps.py │ │ ├── 🐍 forms.py │ │ ├── 🐍 models.py │ │ ├── 🐍 paypal.py # Lógica do PayPal │ │ ├── 🐍 tests.py │ │ ├── 🐍 urls.py │ │ ├── 🐍 views.py │ │ ├── 📁 migrations/ │ │ ├── 📁 templates/ # Templates HTML para "client" │ │ ├── 📁 pycache/ │ │ ├── ... │ ├── 📁 common/ # Recursos compartilhados (ex: templates base, utilitários) │ │ ├── ... │ ├── 📁 contra/ # Configurações do Django │ │ ├── 🐍 init.py │ │ ├── 🐍 settings.py # Configuração principal do Django │ │ ├── 🐍 urls.py # URLs do projeto │ │ ├── 🐍 wsgi.py # Configuração WSGI │ │ ├── 🐍 asgi.py # Configuração ASGI (se necessário) │ │ ├── ... │ ├── 📁 static/ # Arquivos estáticos (CSS, JS, imagens) │ │ ├── css/ │ │ ├── js/ │ │ ├── images/ │ │ ├── ... │ ├── 📁 writer/ # Funcionalidade relacionada a escritores │ │ ├── ...
 
 ### Requirements
 
