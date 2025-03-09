@@ -1,4 +1,5 @@
 from django.http import HttpRequest, HttpResponse
+<<<<<<< HEAD
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _t
@@ -14,17 +15,42 @@ from .models import Subscription, PlanChoice
 from writer.models import Article
 from . import paypal as sub_manager
 from .forms import UpdateSubscriptionForm, UpdateUserForm
+=======
+from django.shortcuts import render
+from django.core.exceptions import ObjectDoesNotExist
+
+from django.contrib.auth import aget_user
+from common.auth import aclient_required
+from common.django_utils import arender
+
+from .models import Subscription, PlanChoice
+from writer.models import Article
+>>>>>>> refs/remotes/origin/main
 
 @aclient_required
 async def dashboard(resquest: HttpRequest) -> HttpResponse:
     
     user = await aget_user(resquest)
+<<<<<<< HEAD
     subscription_plan = 'no subscription yet'
     if subscription := await Subscription.afor_user(user):
         
         subscription_plan = (await subscription.aplan_choice()).name
         if not subscription.is_active:
             subscription_plan += ' (inactive)'
+=======
+    
+    try:
+        
+        subscription = await Subscription.objects.aget(user = user, is_active = True)
+        plan = (await subscription.aplan_choice()).name
+        subscription_plan = plan.name
+    
+    except ObjectDoesNotExist:
+        subscription_plan = 'no subscription yet'
+    
+    
+>>>>>>> refs/remotes/origin/main
     
     context = {'subscription_plan': subscription_plan}
     return await arender(resquest, 'client/dashboard.html', context)
@@ -34,28 +60,49 @@ async def dashboard(resquest: HttpRequest) -> HttpResponse:
 async def browse_articles(resquest: HttpRequest) -> HttpResponse:
     
     user = await aget_user(resquest)
+<<<<<<< HEAD
     articles = []
     
     if subscription := await Subscription.afor_user(user):
+=======
+    
+    try:
+        
+        subscription = await Subscription.objects.aget(user = user, is_active = True)
+        
+>>>>>>> refs/remotes/origin/main
         if not await subscription.ais_premium():
             articles = Article.objects.filter(is_premium = False)
             
         else:
             articles =Article.objects.all()
     
+<<<<<<< HEAD
 
     context = {'has_subscription': subscription is not None, 'articles': articles}
+=======
+    except ObjectDoesNotExist:
+        has_subscription = False
+        articles = []
+    
+
+    context = {'has_subscription': has_subscription, 'articles': articles}
+>>>>>>> refs/remotes/origin/main
     return await arender(resquest, 'client/browse-articles.html', context)
 
 
 
 @aclient_required
+<<<<<<< HEAD
 async def subscription_plan(resquest: HttpRequest) -> HttpResponse:
     
     user = await aget_user(resquest)
     
     if await Subscription.afor_user(user):
         return redirect('client-dashboard')
+=======
+async def subscribe_plan(resquest: HttpRequest) -> HttpResponse:
+>>>>>>> refs/remotes/origin/main
     
     context = { "plan_choices": PlanChoice.objects.filter(is_active = True) }
     
@@ -63,6 +110,7 @@ async def subscription_plan(resquest: HttpRequest) -> HttpResponse:
     return await arender(resquest, 'client/subscription-plan.html', context)
 
 
+<<<<<<< HEAD
 @aclient_required
 async def subscribe_plan(request: HttpRequest) -> HttpResponse:
     user = await aget_user(request)
@@ -71,10 +119,13 @@ async def subscribe_plan(request: HttpRequest) -> HttpResponse:
     context = {'plan_choices': PlanChoice.objects.filter(is_active = True)}
     return await arender(request, 'client/subscribe-plan.html', context)
 
+=======
+>>>>>>> refs/remotes/origin/main
 
 @aclient_required
 async def update_client(request: HttpRequest) -> HttpResponse:
     user = await aget_user(request)
+<<<<<<< HEAD
     subscription_plan = ''
     
     # Get the user's subscription if it exists
@@ -98,12 +149,25 @@ async def update_client(request: HttpRequest) -> HttpResponse:
         'subscription_plan': subscription_plan,
     }
 
+=======
+    subscription = None
+    
+    
+    try:
+        subscription = await Subscription.objects.aget(user = user, is_active = True)
+        
+    except ObjectDoesNotExist:
+        pass
+    
+    context = {"has_subscription": subscription is not None}
+>>>>>>> refs/remotes/origin/main
     return await arender(request, 'client/update-client.html', context)
 
 
 @aclient_required
 async def create_subscription(request: HttpRequest, sub_id: str, plan_code: str) -> HttpResponse:
     
+<<<<<<< HEAD
     user = await aget_user(request)
     
     if await Subscription.afor_user(user):
@@ -111,6 +175,10 @@ async def create_subscription(request: HttpRequest, sub_id: str, plan_code: str)
     
     
     plan_choice = await PlanChoice.afrom_plan_code(plan_code)
+=======
+    plan_choice = await PlanChoice.afrom_plan_code(plan_code)
+    user = await aget_user(request)
+>>>>>>> refs/remotes/origin/main
     
     await Subscription.objects.acreate(
         plan_choice = plan_choice,
@@ -123,6 +191,7 @@ async def create_subscription(request: HttpRequest, sub_id: str, plan_code: str)
     
     context = {'subscription_plan': plan_choice.name}
     return await arender(request, 'client/create-subscription.html', context)
+<<<<<<< HEAD
 
 
 @aclient_required
@@ -280,3 +349,5 @@ async def delete_account_client(request: HttpRequest) -> HttpResponse:
     return await arender(request, 'client/delete-account.html', context)
  
   
+=======
+>>>>>>> refs/remotes/origin/main

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {% extends 'client/_main.html' %}
+=======
+{% extends "client/_main.html" %}
+>>>>>>> refs/remotes/origin/main
 {% load i18n %}
 {% load l10n %}
 
@@ -41,7 +45,12 @@
                             });
                         },
                         onApprove: function(data, actions) {
+<<<<<<< HEAD
                             let url_path = `/client/create-subscription/${data.subscriptionID}/{{plan_choice.plan_code}}`;
+=======
+                            print("\n\n" + data.subscriptionID + "\n\n")
+                            let url_path = '/client/create-subscription/${data.subscriptionID}/{{plan_choice.plan_code}}';
+>>>>>>> refs/remotes/origin/main
                             window.open(url_path, '_self');
                         }
                     }).render('#paypal-button-container-{{plan_choice.external_plan_id}}'); // Renders the PayPal button

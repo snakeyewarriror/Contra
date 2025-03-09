@@ -2,7 +2,10 @@ from django.utils import timezone
 from django.db import models
 from django.utils.translation import gettext as _t2
 from django.utils.translation import gettext_lazy as _t
+<<<<<<< HEAD
 from django.core.exceptions import ObjectDoesNotExist
+=======
+>>>>>>> refs/remotes/origin/main
 
 from asgiref.sync import sync_to_async
 
@@ -48,7 +51,11 @@ class PlanChoice(models.Model):
     
     
     def __str__(self) -> str:
+<<<<<<< HEAD
         return f'{str(self.name)} subscription'
+=======
+        return f'{str("self.name")} subscription'
+>>>>>>> refs/remotes/origin/main
     
     @classmethod
     def from_plan_code(cls, plan_code:str) -> 'PlanChoice':
@@ -82,7 +89,11 @@ class Subscription(models.Model):
     plan_choice = models.ForeignKey(PlanChoice, on_delete=models.CASCADE)
     
     def __str__(self) -> str:
+<<<<<<< HEAD
         plan_choice = self.plan_choice
+=======
+        plan_choice = Subscription.PlanChoices(self.plan_choice)
+>>>>>>> refs/remotes/origin/main
         return f'{self.user.first_name} {self.user.last_name}: {plan_choice.name} {_t2("subscription")}'
     
     
@@ -93,6 +104,7 @@ class Subscription(models.Model):
         def call_sync_fk() -> PlanChoice:
             return self.plan_choice
         
+<<<<<<< HEAD
         return await call_sync_fk()
         
         
@@ -111,3 +123,9 @@ class Subscription(models.Model):
         
         except ObjectDoesNotExist:
             return None
+=======
+        
+    async def ais_premium(self) -> bool:
+        (await self.aplan_choice()).plan_code == 'PR'
+        
+>>>>>>> refs/remotes/origin/main
