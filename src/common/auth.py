@@ -6,11 +6,15 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import aget_user
 from django.shortcuts import redirect
 
+<<<<<<< HEAD
 from account.models import CustomUser
+=======
+>>>>>>> refs/remotes/origin/main
 from common.django_utils import AsyncViewT
 
 
 
+<<<<<<< HEAD
 __all__ = [
     'aclient_required',
     'awriter_required',
@@ -25,6 +29,8 @@ USER_PROFILES = {
     'writer': lambda user: user.is_writer,
 }
 
+=======
+>>>>>>> refs/remotes/origin/main
 
 def aclient_required(client_view: AsyncViewT):
     
@@ -54,6 +60,7 @@ def awriter_required(writer_view: AsyncViewT):
     
     return function
 
+<<<<<<< HEAD
 def aprofile_required(profile: str, login_url: str = 'login'):
     
     if profile not in USER_PROFILES:
@@ -89,6 +96,8 @@ def aanonymous_required(original_view: AsyncViewT):
         return await original_view(request, *args, **kwargs)
         
     return decorated_view
+=======
+>>>>>>> refs/remotes/origin/main
 
 
 def ensure_for_current_user(model: type, *, id_in_url: str = 'id', redirect_if_missing: str):

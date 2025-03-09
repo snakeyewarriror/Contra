@@ -12,12 +12,15 @@
 
             {{ update_user_form|crispy }}
 
+<<<<<<< HEAD
             <p style="margin-top: 25px;" class="text-center">
                 {% translate "Update your password before you forget it!" %}
                 <a href="{% url 'password-update' %}">{% translate "Change Password" %}</a>
             </p>
             <hr width="100%" style="margin-top: 30px; margin-bottom: 20px;">
 
+=======
+>>>>>>> refs/remotes/origin/main
             <div class= "d-flex justify-content-between align-items-center mt-5">
                 <input class="btn btn-success" type="submit" value="{% translate 'Update' %}">
                 <a href ="{% url 'delete-account' %}" class="btn btn-danger">

@@ -12,8 +12,13 @@ def populate_plan_choice(apps,schema_editor):
         is_active=True,
         description1='Get access to standard articles and reports',
         description2='Limited access',
+<<<<<<< HEAD
         external_plan_id='P-5S200053E37794818M7GMVOY',
         external_api_url='https://www.paypal.com/sdk/js?client-id=AT8HbacdMrOct-7sapOrBl-jv-_Nfr7eG872MWN8_GcUnPNB6b2kzeuB9-QOPD5FLX3ZjipuKHnAGotv&vault=true&intent=subscription',
+=======
+        external_plan_id='P-5CY6753525879563JM64K4QI',
+        external_api_url='https://www.paypal.com/sdk/js?client-id=AZCjz0GNxeZ0eTmrINTYfcqwpev9cuJhRGCVyOatDOpcFdhsvVUmQGoTt1wLYlgfZwe_g3zQ8Is80KGG&vault=true&intent=subscription',
+>>>>>>> refs/remotes/origin/main
         external_style_json="""{
         "shape": "pill",
         "color": "blue",
@@ -28,7 +33,11 @@ def populate_plan_choice(apps,schema_editor):
         is_active=True,
         description1='Highly regarded premium articles and reports',
         description2='Full Access',
+<<<<<<< HEAD
         external_plan_id='P-73X108819R307980MM7GMWAI',
+=======
+        external_plan_id='P-23435713LA1089155M64LEGA',
+>>>>>>> refs/remotes/origin/main
         external_api_url='https://www.paypal.com/sdk/js?vault=true&intent=subscription',
         external_style_json="""{
         "shape": "pill",
