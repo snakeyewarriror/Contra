@@ -9,9 +9,65 @@ Contra is a Django app with a MySQL backend DB.
 ### Project Structure
 
 ```
-project-root/ ├── .gitignore # Ignore files para Git ├── LICENSE # Licença do projeto ├── README.md # Documentação do projeto ├── requirements.txt # Dependências do Python ├── .vscode/ # Configurações do VS Code │ ├── Contra.code-workspace # Configurações do workspace │ ├── ... ├── docs/ # Pasta de documentação │ ├── ... ├── db.sqlite3 # Banco de dados SQLite (desenvolvimento local) ├── manage.py # Script de gerenciamento do Django ├── src/ # (Opcional) Pasta de código-fonte │ ├── account/ # Autenticação de usuário e gerenciamento de conta │ │ ├── init.py │ │ ├── admin.py │ │ ├── apps.py │ │ ├── forms.py │ │ ├── managers.py │ │ ├── models.py │ │ ├── tests.py │ │ ├── urls.py │ │ ├── views.py │ │ ├── migrations/ # Migrações do banco de dados Django │ │ ├── templates/ # Templates relacionados a contas │ │ ├── pycache/ # Cache do Python │ │ ├── ... │ ├── client/ # Funcionalidades relacionadas ao cliente │ │ ├── init.py │ │ ├── admin.py │ │ ├── apps.py │ │ ├── forms.py │ │ ├── models.py │ │ ├── paypal.py # Lógica relacionada ao PayPal │ │ ├── tests.py │ │ ├── urls.py │ │ ├── views.py │ │ ├── migrations/ │ │ ├── templates/ # Templates do cliente │ │ ├── pycache/ │ │ ├── ... │ ├── common/ # Recursos compartilhados (ex: templates base, utilitários) │ │ ├── ... │ ├── contra/ # Configurações do projeto Django │ │ ├── init.py │ │ ├── settings.py # Configuração principal do Django │ │ ├── urls.py # URLs do projeto │ │ ├── wsgi.py # Configuração WSGI │ │ ├── asgi.py # Configuração ASGI (se necessário) │ │ ├── ... │ ├── static/ # Arquivos estáticos (CSS, JS, imagens) │ │ ├── css/ │ │ ├── js/ │ │ ├── images/ │ │ ├── ... │ ├── writer/ # Funcionalidade relacionada a escritores │ │ ├── ...
-```
+project-root/
+├── .gitignore
+├── LICENSE
+├── README.md
+├── requirements.txt
+├── .vscode/
+│   ├── Contra.code-workspace
+│   ├── ...
+├── docs/
+│   ├── ...
+├── db.sqlite3
+├── manage.py
+├── src/
+│   ├── account/
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── forms.py
+│   │   ├── managers.py
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   ├── views.py
+│   │   ├── migrations/
+│   │   ├── templates/
+│   │   ├── __pycache__/
+│   │   ├── ...
+│   ├── client/
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── forms.py
+│   │   ├── models.py
+│   │   ├── paypal.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   ├── views.py
+│   │   ├── migrations/
+│   │   ├── templates/
+│   │   ├── __pycache__/
+│   │   ├── ...
+│   ├── common/
+│   │   ├── ...
+│   ├── contra/
+│   │   ├── __init__.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   ├── wsgi.py
+│   │   ├── asgi.py
+│   │   ├── ...
+│   ├── static/
+│   │   ├── css/
+│   │   ├── js/
+│   │   ├── images/
+│   │   ├── ...
+│   ├── writer/
+│   │   ├── ...
 
+```
 ### Requirements
 
 - Python 3.8+
