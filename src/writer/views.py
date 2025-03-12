@@ -2,7 +2,6 @@ from django.http import HttpRequest, HttpResponse
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import aget_user
 from django.shortcuts import redirect
-<<<<<<< HEAD
 from django.contrib.auth.hashers import check_password
 from django.contrib import messages
 
@@ -12,14 +11,6 @@ from common.auth import awriter_required
 from writer.forms import ArticleForm, UpdateUserForm
 from .models import Article
 from common.forms import CustomPasswordChangeForm
-=======
-
-from common.auth import ensure_for_current_user
-from common.django_utils import arender
-from common.auth import awriter_required
-from writer.forms import ArticleForm, UpdateUserForm
-from .models import Article
->>>>>>> refs/remotes/origin/main
 
 @awriter_required
 async def dashboard(request: HttpRequest) -> HttpResponse:
@@ -122,7 +113,6 @@ async def delete_account(request: HttpRequest) -> HttpResponse:
     
     context = {'user': user}
     return await arender(request, 'writer/delete-account.html', context)
-<<<<<<< HEAD
 
 
 @awriter_required
@@ -154,5 +144,3 @@ async def password_update(request: HttpRequest) -> HttpResponse:
         'password_form': form,
     }
     return await arender(request, 'writer/password-update.html', context)
-=======
->>>>>>> refs/remotes/origin/main

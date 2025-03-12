@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
 import django.contrib.auth as auth
-<<<<<<< HEAD
 from common.django_utils import arender, alogout
 from django.contrib.auth.decorators import login_required
 
@@ -16,18 +15,6 @@ async def home(request: HttpRequest) -> HttpResponse:
 
 
 @aanonymous_required
-=======
-
-
-from .forms import CustomUserCreationForm, CustomAuthenticationForm
-from .models import CustomUser
-from common.django_utils import arender, alogout
-
-async def home(request: HttpRequest) -> HttpResponse:
-    return render(request, 'account/home.html')
-
-
->>>>>>> refs/remotes/origin/main
 async def register(request: HttpRequest) -> HttpResponse:
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
@@ -44,10 +31,7 @@ async def register(request: HttpRequest) -> HttpResponse:
     return await arender(request, 'account/register.html', context)
 
 
-<<<<<<< HEAD
 @aanonymous_required
-=======
->>>>>>> refs/remotes/origin/main
 async def login(request: HttpRequest) -> HttpResponse:
     
     if request.method == 'POST':
@@ -73,16 +57,7 @@ async def login(request: HttpRequest) -> HttpResponse:
     return await arender(request, 'account/login.html', context)
 
 
-<<<<<<< HEAD
 @login_required(login_url='login')
 async def logout(request: HttpRequest) -> HttpResponse:
     await alogout(request)
     return redirect('/')
-=======
-async def logout(request: HttpRequest) -> HttpResponse:
-    await alogout(request)
-    return redirect('/')
-
-
-
->>>>>>> refs/remotes/origin/main

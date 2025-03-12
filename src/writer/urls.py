@@ -1,10 +1,6 @@
 from django.urls import path
 from . import views
 
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/main
 urlpatterns = [
     path('dashboard/', views.dashboard, name ='writer-dashboard'),
     path('my-articles/', views.my_articles, name ='my-articles'),
@@ -13,8 +9,5 @@ urlpatterns = [
     path('delete-article/<int:id>', views.delete_article, name ='delete-article'),
     path('update-writer/', views.update_writer, name ='update-writer'),
     path('delete-account/', views.delete_account, name ='delete-account'),
-<<<<<<< HEAD
     path('password-update/', views.password_update, name ='password-update'),
-=======
->>>>>>> refs/remotes/origin/main
 ]
