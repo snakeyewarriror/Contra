@@ -4,7 +4,7 @@
 
 ## Development
 
-Contra is a Django app with a MySQL backend DB.
+Contra is a Django app with a SQLite backend DB.
 
 ### Project Structure
 
